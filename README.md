@@ -20,7 +20,7 @@ all python projects that use pip packages should be set up to use a virtual envi
   * this needs to be done again if you add more pip packages to update the requirements.txt
   * if you clone a python project from github, you can use `pip install -r requirements.txt` to install the needed packages
 * you can use the command `deactivate` to leave the virtual environment
-* everything you want to work on a python project with a virtual environment, you will need to activate it first
+* everytime you want to work on a python project with a virtual environment, you will need to activate it first
 
 #### Virtual Environments with git
 
