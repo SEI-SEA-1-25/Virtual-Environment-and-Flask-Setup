@@ -79,7 +79,7 @@ print(os.environ['MY_BIG_SECRET'])
 * the corresponding `.env` file would look like this:
 ```sh
 # in .env
-MY_BIG_SECRET='pls don't tell anyone my secrets'
+MY_BIG_SECRET='pls dont tell anyone my secrets 🙏🏻😳' 
 ```
 
 *If you add environmental variables while your flask app is running, you need to stop the server with `control + c` and restart it with `flask run` to read them* 
