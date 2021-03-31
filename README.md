@@ -2,7 +2,7 @@
 
 Step by step breakdown of setting up a virtual envrionment for python projects and spinning up a flask app
 
-## Steps to set up a virtual environment with git
+## Steps to Set up a Virtual Environment with Git
 
 all python projects that use pip packages should be set up to use a virtual environment to ensure version control and package compatibility
 
