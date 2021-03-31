@@ -24,7 +24,7 @@ all python projects that use pip packages should be set up to use a virtual envi
 
 #### Virtual Environments with git
 
-the `venv` folder is like `node_modules` with node.js. It need to be git ignored.
+the `venv` folder is like `node_modules` with node.js. It needs to be git ignored.
 
 * after you `git init` in your project, `touch .gitignore` and add `venv` and `__pycache__` to it, so they don't get sent up to github.
 * if you clone a repo from github with a virtual environment first install the needed packages with `pip install -r requirements.txt` and then run `. venv/bin/activate` (`. venv/Scripts/activate` on windows) to start the virtual environment
@@ -40,6 +40,7 @@ Here are the steps to spin up a flask server:
   * `pip install flask` `pip install python-dotenv`
 * touch the main entrypoint for your flask app, such as `app.py`
 * touch `.flaskenv` and populate it with the needed environmental variables to config flask 
+  * .flaskenv doesn't need to be in the .gitignore, it is for flask configuration only. But if you have any API keys or other secrets, you can touch a `.env` file and put them in there.
 ```sh
 # example .flaskenv
 # this will enable debug mode in flask
@@ -65,3 +66,20 @@ def hello_world():
   return 'Hello from Flask 👋'
 ```
 * use `flask run` to run your app!
+* If you have secret API keys in a `.env` file, you can access them like this:
+```python
+# import dotenv
+from dotenv import load_dotenv
+# import the operating system
+import os
+
+# this is how you get environmental variables
+print(os.environ['MY_BIG_SECRET'])
+```
+* the corresponding `.env` file would look like this:
+```sh
+# in .env
+MY_BIG_SECRET='pls don't tell anyone my secrets'
+```
+
+*If you add environmental variables while your flask app is running, you need to stop the server with `control + c` and restart it with `flask run` to read them* 
